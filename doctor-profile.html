@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile - Sarv Saksham</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="doctor-profile.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="brand-container">
+        <a href="#" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="logo-icon">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+            <span class="brand-name">Sarv Saksham</span>
+        </a>
+    </div>
+
+    <div class="container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="profile-info">
+                <div class="profile-image-container">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=250" alt="Dr. John Smith" class="profile-image">
+                    <div class="online-status"></div>
+                </div>
+                <div class="profile-details">
+                    <h1>Dr. John Smith</h1>
+                    <p class="specialty">Cardiologist</p>
+                    <div class="rating">
+                        <div class="stars">★★★★★</div>
+                        <span class="rating-count">(4.9)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <div class="stat-value">1,234</div>
+                    <div class="stat-label">Patients</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">98%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">8+</div>
+                    <div class="stat-label">Years Exp.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <!-- Upcoming Appointments -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Upcoming Appointments</h2>
+                    <button class="view-all-btn" onclick="showAllAppointments()">View All</button>
+                </div>
+                <div class="appointments-list" id="appointmentsList"></div>
+            </div>
+
+            <!-- Messages -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Patient Messages</h2>
+                    <button class="view-all-btn" onclick="showAllMessages()">View All</button>
+                </div>
+                <div class="messages-list" id="messagesList"></div>
+            </div>
+
+            <!-- Recent Patients -->
+            <div class="card patients-card">
+                <div class="card-header">
+                    <h2>Recent Patients</h2>
+                    <button class="view-all-btn" onclick="showAllPatients()">View All</button>
+                </div>
+                <div class="patients-grid" id="patientsGrid"></div>
+            </div>
+
+            <!-- Activity Chart -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>Activity Overview</h2>
+                    <div class="period-selector">
+                        <button class="period-btn active" data-period="weekly">Week</button>
+                        <button class="period-btn" data-period="monthly">Month</button>
+                    </div>
+                </div>
+                <canvas id="activityChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <button class="action-btn primary" onclick="showScheduleAppointment()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6"/>
+                    <line x1="8" y1="2" x2="8" y2="6"/>
+                    <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+                Schedule Appointment
+            </button>
+            <button class="action-btn" onclick="showMessageCompose()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+                Send Message
+            </button>
+        </div>
+    </div>
+
+    <script src="doctor-profile.js"></script>
+</body>
+</html>
